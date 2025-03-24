@@ -1,37 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ✈️ Sky Connect
 
-## Getting Started
+Una aplicación moderna de búsqueda de vuelos construida con Next.js que ayuda a los usuarios a encontrar y comparar opciones de vuelo con una interfaz intuitiva y atractiva.
 
-First, run the development server:
+## 🚀 Mi Bonus para la prueba
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Diseño Responsive**: Experiencia fluida en todos los dispositivos
+- **Soporte de Temas**: Modo oscuro y claro para una visualización cómoda
+- **Avión Personalizada**: Cree un avión personalizado llamado alfred - lo puedes ver en mapas
+
+    <img src="./public/airplane-map.png" alt="Mi genial imagen" width=130 />
+
+- **Arquitectura Moderna**: Aprovechando Next.js 15 con App Router
+- **Optimización de Rendimiento**: Uso estratégico de Componentes Servidor y Cliente
+- **Testing**: Cobertura completa de pruebas para garantizar la fiabilidad
+- **UI/UX Mejorada**: 
+  - Animaciones y transiciones suaves 🥳
+  - Funcionalidad de historial de búsqueda 🥰
+  - Implementación del diseño de Figma con mejoras consideradas 🫣
+  - Interfaz de usuario intuitiva 💚
+
+## 🏗️ Arquitectura
+
+Este proyecto sigue los principios de 👀 Screaming Architecture 👀, aunque es un proyecto muy pequeño quice demostrar como se estructuraría un proyecto en la vida real con alto potencia de escalar ✊:
+
+```
+src/
+├── app/                    # Páginas del App Router de Next.js
+├── components/            # Componentes UI reutilizables Globales
+│   ├── ui/               # Componentes UI básicos
+│   ├── blocks/         # Componentes específicos de funcionalidades
+├── hooks/                # Hooks personalizados de React reutilizables
+├── lib/                  # Funciones y configuraciones de utilidad
+├── services/            # Integraciones con APIs y servicios externos reutilizables
+├── modules/              # Aqui van los modulos separados por features 👀.
+    ├── airplane/               
+    │   ├── pages/ 
+    │   ├── components/               
+    │   ├── pages/ 
+    │   ├── services/               
+    │   ├── hooks/
+    │   ├── types/               
+    │   ├── utils/  
+    
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 💻 Organización del Código
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Mantenemos una base de código limpia y modular con una clara separación de responsabilidades.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## 🛠️ Aspectos Técnicos Destacados
 
-To learn more about Next.js, take a look at the following resources:
+- **Renderizado del Lado del Servidor**: Optimizado para rendimiento y SEO
+- **Componentes Cliente**: Uso estratégico para características interactivas
+- **Seguridad de Tipos**: Implementación completa de TypeScript
+- **Gestión de Estado**: Patrones eficientes de flujo de datos
+- **Composición de Componentes**: Componentes UI reutilizables y mantenibles
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Inicio Rápido
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clona el repositorio
+2. Instala las dependencias:
+```bash
+yarn install
+```
 
-## Deploy on Vercel
+3. Configura las variables de entorno:
+```bash
+cp .env
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Ejecuta el servidor de desarrollo:
+```bash
+yarn dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# sky-connect
+5. Abre [http://localhost:3000](http://localhost:3000) para ver la aplicación
+
+## 🔐 Variables de Entorno
+
+Crea un archivo `.env.local` en la raíz del proyecto con las siguientes variables:
+
+```env
+# API Configuration
+NEXT_PUBLIC_AVIATIONSTACK_API_KEY=tu_api_aviation_key
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=tu_api_google_maps
+```
+Si no tienes las apis y quieres probarla puedes entrar aqui [https://sky-connect-eight.vercel.app/](https://sky-connect-eight.vercel.app/) para ver en producción el proyecto
+
+## 🧪 Testing
+
+Ejecuta la suite de pruebas:
+```bash
+yarn test
+```
+
+## 📱 Stack Tecnológico
+
+- Next.js 15
+- TypeScript
+- Tailwind CSS
+- Jest & React Testing Library
+- Zustand
+
+---
+
+Construido con ❤️ usando tecnologías web modernas y mejores prácticas [https://danielsuarez.dev](https://danielsuarez.dev)
