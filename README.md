@@ -2,10 +2,13 @@
 
 Una aplicación moderna de búsqueda de vuelos construida con Next.js que ayuda a los usuarios a encontrar y comparar opciones de vuelo con una interfaz intuitiva y atractiva.
 
+[https://sky-connect-eight.vercel.app/](https://sky-connect-eight.vercel.app/) Miralo en producción
+
 ## 🚀 Mi Bonus para la prueba
 
 - **Diseño Responsive**: Experiencia fluida en todos los dispositivos
 - **Soporte de Temas**: Modo oscuro y claro para una visualización cómoda
+- **Seguridad por API**: Se implementó el consumo por api de NEXTJS para no exponer el api key
 - **Avión Personalizada**: Cree un avión personalizado llamado alfred - lo puedes ver en mapas
 
     <img src="./public/airplane-map.png" alt="Mi genial imagen" width=130 />
@@ -105,4 +108,4 @@ yarn test
 
 ---
 
-Construido con ❤️ usando tecnologías web modernas y mejores prácticas [https://danielsuarez.dev](https://danielsuarez.dev)
+Construido con ❤️ usando tecnologías web modernas y mejores prácticas [https://danielsuarez.dev](https://danielsuarez.dev) -  [Linkedin](https://www.linkedin.com/in/daniel-suarez-dev/) 
