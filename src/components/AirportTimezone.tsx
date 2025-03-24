@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Airport } from '@/types/aviation';
+import { Airport } from '@/modules/aviation-stack/types/aviation.types';
 import {
   Card,
   CardContent,

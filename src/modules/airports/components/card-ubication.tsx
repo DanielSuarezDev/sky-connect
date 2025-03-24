@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import React from "react";
-import { Airport } from "@/types/aviation";
+import { Airport } from "@/modules/aviation-stack/types/aviation.types";
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 
 export const CardUbication = ({ airport }: { airport: Airport }) => {
@@ -37,7 +37,7 @@ export const CardUbication = ({ airport }: { airport: Airport }) => {
                     <div className="w-full lg:w-1/2 space-y-4 z-10 p-6">
                         <div className="flex items-center gap-3">
                             <div className="w-10 h-10 rounded-full flex items-center justify-center">
-                                <Image src="/info-circle.svg" alt="Info" width={30} height={30} />
+                                <Image src="/ubication.svg" alt="Info" width={30} height={30} />
                             </div>
                             <h2 className="text-2xl font-bold text-[#006fee]">Ubicación</h2>
                         </div>

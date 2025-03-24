@@ -1,6 +1,6 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { Airport } from '@/types/aviation';
+import { Airport } from '@/modules/aviation-stack/types/aviation.types';
 import { Icon } from 'leaflet';
 
 interface AirportMapProps {

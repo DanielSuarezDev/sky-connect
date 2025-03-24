@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { create } from 'zustand';
-import { aviationService } from '@/services/aviationService';
-import { Airport } from '@/types/aviation'; // Ajusta según tu interfaz
+import { aviationService } from '@/modules/aviation-stack/services/aviation.service';
+import { Airport } from '@/modules/aviation-stack/types/aviation.types'; // Ajusta según tu interfaz
 
 interface AirportStore {
   // Estado
@@ -136,7 +137,7 @@ export const useAirportStore = create<AirportStore>((set, get) => ({
   },
 
   // Buscar aeropuerto por código (en data local)
-  getAirportByCode: (code) => {
+  getAirportByCode: (code: string) => {
     const { airports } = get();
     const codeLC = code.toLowerCase();
     return airports.find(

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const gothamBlack = localFont({
-  src: "../fonts/Gotham-Black.woff2",
+  src: "../../public/fonts/Gotham-Black.woff2",
   variable: "--font-gotham-black",
   display: "swap",
 })

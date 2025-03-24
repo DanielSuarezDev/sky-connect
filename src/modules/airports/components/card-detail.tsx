@@ -1,4 +1,4 @@
-import { Airport } from '@/types/aviation';
+import { Airport } from '@/modules/aviation-stack/types/aviation.types';
 import Image from 'next/image';
 import React from 'react';
 

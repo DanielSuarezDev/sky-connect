@@ -1,7 +1,7 @@
 import { useRouter } from 'next/navigation';
 import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
-import { Airport } from '@/types/aviation';
-import { useAirportStore } from '@/store/useAirportStore';
+import { Airport } from '@/modules/aviation-stack/types/aviation.types';
+import { useAirportStore } from '@/modules/aviation-stack/store/use-airport.store';
 
 interface AirportCardProps {
   airport: Airport;

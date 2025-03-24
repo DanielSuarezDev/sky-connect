@@ -1,4 +1,4 @@
-import { AviationStackResponse } from '@/types/aviation';
+import { AviationStackResponse } from '@/modules/aviation-stack/types/aviation.types';
 
 export const aviationService = {
   getAirports: async (page: number, query?: string): Promise<AviationStackResponse> => {

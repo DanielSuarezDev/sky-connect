@@ -7,8 +7,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Airport } from '@/types/aviation';
-import { useAirportStore } from '@/store/useAirportStore';
+import { Airport } from '@/modules/aviation-stack/types/aviation.types';
+import { useAirportStore } from '@/modules/aviation-stack/store/use-airport.store';
 
 interface AirportsTableProps {
   airports: Airport[];

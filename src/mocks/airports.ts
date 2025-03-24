@@ -1,4 +1,4 @@
-import { Airport } from '@/types/aviation';
+import { Airport } from '@/modules/aviation-stack/types/aviation.types';
 
 export const mockAirports: Airport[] = [
   {

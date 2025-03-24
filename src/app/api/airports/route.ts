@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { Airport } from '@/types/aviation';
+import { Airport } from '@/modules/aviation-stack/types/aviation.types';
 
 const API_KEY = process.env.NEXT_PUBLIC_AVIATIONSTACK_API_KEY;
 const BASE_URL = 'https://api.aviationstack.com/v1';
@@ -13,10 +13,12 @@ export async function GET(request: NextRequest) {
     const limit = parseInt(searchParams.get('limit') || '100');
     const itemsPerPage = parseInt(searchParams.get('per_page') || '10');
 
-    // Si no hay query, hacemos la llamada directa a la API
     if (!query) {
       const response = await fetch(
-        `${BASE_URL}/airports?access_key=${API_KEY}&limit=${limit}`
+        `${BASE_URL}/airports?access_key=${API_KEY}&limit=${limit}`,
+        {
+          cache: 'force-cache'
+        }
       );
 
       if (!response.ok) {
@@ -38,7 +40,10 @@ export async function GET(request: NextRequest) {
     // Si hay query, filtramos los datos ya obtenidos
     else {
       const response = await fetch(
-        `${BASE_URL}/airports?access_key=${API_KEY}&limit=${limit}`
+        `${BASE_URL}/airports?access_key=${API_KEY}&limit=${limit}`,
+        {
+          cache: 'force-cache'
+        }
       );
 
       if (!response.ok) {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useAirportStore } from '@/store/useAirportStore';
-import { Airport } from '@/types/aviation';
+import { useAirportStore } from '@/modules/aviation-stack/store/use-airport.store';
+import { Airport } from '@/modules/aviation-stack/types/aviation.types';
 
 interface AirportDetailsProps {
   iataCode: string;

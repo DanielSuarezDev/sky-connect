@@ -1,8 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useAirportStore } from '@/store/useAirportStore';
-import { aviationService } from '@/services/aviationService';
+import { useAirportStore } from '@/modules/aviation-stack/store/use-airport.store';
+import { aviationService } from '@/modules/aviation-stack/services/aviation.service';
 import { AirportCard } from './AirportCard';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
