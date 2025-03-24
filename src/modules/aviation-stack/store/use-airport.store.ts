@@ -4,37 +4,32 @@ import { aviationService } from '@/modules/aviation-stack/services/aviation.serv
 import { Airport } from '@/modules/aviation-stack/types/aviation.types'; // Ajusta según tu interfaz
 
 interface AirportStore {
-  // Estado
-  airports: Airport[];         // Todos los aeropuertos cargados
-  filteredAirports: Airport[]; // Resultado de filtrar airports
+  airports: Airport[];
+  filteredAirports: Airport[];
   selectedAirport: Airport | null;
 
   loading: boolean;
   error: string | null;
 
-  // Búsqueda y paginación
   searchTerm: string;
   currentPage: number;
   itemsPerPage: number;
   totalItems: number;
   totalPages: number;
   lastFetchTime: number | null;
-  cacheDuration: number; // duración del caché en milisegundos
+  cacheDuration: number;
 
-  // Acciones
   fetchAirports: () => Promise<void>;
   setSearchTerm: (term: string) => void;
   setCurrentPage: (page: number) => void;
   getCurrentPageAirports: () => Airport[];
   getAirportByCode: (code: string) => Airport | null;
   shouldRefetchData: () => boolean;
-
-  // Ejemplo de obtener detalles (si deseas buscar datos adicionales)
+  
   fetchAirportDetails: (iataCode: string) => Promise<void>;
 }
 
 export const useAirportStore = create<AirportStore>((set, get) => ({
-  // Estado inicial
   airports: [],
   filteredAirports: [],
   selectedAirport: null,
@@ -47,20 +42,17 @@ export const useAirportStore = create<AirportStore>((set, get) => ({
   totalItems: 0,
   totalPages: 1,
   lastFetchTime: null,
-  cacheDuration: 5 * 60 * 1000, // 5 minutos
+  cacheDuration: 5 * 60 * 1000,
 
-  // Verifica si los datos deben ser recargados
   shouldRefetchData: () => {
     const { lastFetchTime, cacheDuration } = get();
     if (!lastFetchTime) return true;
     return Date.now() - lastFetchTime > cacheDuration;
   },
 
-  // Descarga todos los aeropuertos y los almacena en caché
   fetchAirports: async () => {
     const { shouldRefetchData } = get();
     
-    // Si los datos están en caché y son válidos, no hacemos nada
     if (!shouldRefetchData() && get().airports.length > 0) {
       return;
     }
@@ -70,7 +62,6 @@ export const useAirportStore = create<AirportStore>((set, get) => ({
       const response = await aviationService.getAirports(1);
       const all = response.data || [];
 
-      // Calculamos la paginación basada en todos los datos
       const totalItems = all.length;
       const itemsPerPage = get().itemsPerPage;
       const totalPages = Math.max(1, Math.ceil(totalItems / itemsPerPage));
@@ -91,11 +82,9 @@ export const useAirportStore = create<AirportStore>((set, get) => ({
     }
   },
 
-  // Actualiza el término de búsqueda y filtra en local
   setSearchTerm: (term) => {
     const { airports, itemsPerPage } = get();
 
-    // Filtro local (ignora mayúsculas)
     const q = term.toLowerCase();
     let filtered = airports;
     if (q.length > 0) {
@@ -107,7 +96,6 @@ export const useAirportStore = create<AirportStore>((set, get) => ({
       );
     }
 
-    // Recalculamos la paginación con los resultados filtrados
     const totalItems = filtered.length;
     const totalPages = Math.max(1, Math.ceil(totalItems / itemsPerPage));
 
@@ -116,19 +104,16 @@ export const useAirportStore = create<AirportStore>((set, get) => ({
       filteredAirports: filtered,
       totalItems: totalItems,
       totalPages: totalPages,
-      currentPage: 1 // Regresa a la primera página cuando cambia la búsqueda
+      currentPage: 1
     });
   },
 
-  // Cambia de página (local)
   setCurrentPage: (page) => {
     const { totalPages } = get();
-    // Aseguramos que la página esté dentro de los límites válidos
     const newPage = Math.max(1, Math.min(page, totalPages));
     set({ currentPage: newPage });
   },
 
-  // Devuelve los aeropuertos de la página actual
   getCurrentPageAirports: () => {
     const { filteredAirports, currentPage, itemsPerPage } = get();
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -136,7 +121,6 @@ export const useAirportStore = create<AirportStore>((set, get) => ({
     return filteredAirports.slice(startIndex, endIndex);
   },
 
-  // Buscar aeropuerto por código (en data local)
   getAirportByCode: (code: string) => {
     const { airports } = get();
     const codeLC = code.toLowerCase();
@@ -146,13 +130,10 @@ export const useAirportStore = create<AirportStore>((set, get) => ({
         airport.icao_code?.toLowerCase() === codeLC
     ) || null;
   },
-
-  // Ejemplo de obtener detalles adicionales (si tienes tu propio endpoint)
+  
   fetchAirportDetails: async (iataCode: string) => {
     set({ loading: true, error: null });
     try {
-      // Este fetch es un ejemplo: /api/airports/[iataCode]
-      // Ajusta según tu implementación
       const response = await fetch(`/api/airports/${iataCode}`);
       const data = await response.json();
       if (Array.isArray(data) && data.length > 0) {

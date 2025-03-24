@@ -28,7 +28,7 @@ export async function GET(request: NextRequest) {
       const data = await response.json();
       
       return NextResponse.json({
-        data: data.data, // Enviamos todos los datos para almacenar en el store
+        data: data.data,
         pagination: {
           total: data.data.length,
           page,
@@ -37,7 +37,6 @@ export async function GET(request: NextRequest) {
         }
       });
     }
-    // Si hay query, filtramos los datos ya obtenidos
     else {
       const response = await fetch(
         `${BASE_URL}/airports?access_key=${API_KEY}&limit=${limit}`,
@@ -52,7 +51,6 @@ export async function GET(request: NextRequest) {
 
       const data = await response.json();
       
-      // Filtramos los resultados
       const filteredData = data.data.filter((airport: Airport) => {
         const searchLower = query.toLowerCase();
         return (
@@ -64,7 +62,7 @@ export async function GET(request: NextRequest) {
       });
 
       return NextResponse.json({
-        data: filteredData, // Enviamos los datos filtrados completos
+        data: filteredData,
         pagination: {
           total: filteredData.length,
           page,

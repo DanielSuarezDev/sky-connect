@@ -4,7 +4,6 @@ import React, { useEffect, useRef } from "react";
 export const WrapperBackground = ({ children }: { children: React.ReactNode }) => {
     const videoRef = useRef<HTMLVideoElement>(null)
     useEffect(() => {
-        // Asegurarse de que el video se reproduzca correctamente
         if (videoRef.current) {
             videoRef.current.play().catch(error => {
                 console.error("Error reproduciendo el video:", error)
@@ -21,7 +20,6 @@ export const WrapperBackground = ({ children }: { children: React.ReactNode }) =
             className="absolute inset-0 w-full h-full object-cover z-0"
         >
             <source src="/video-background.mp4" type="video/mp4" />
-            {/* Fallback para navegadores que no soportan video */}
             Tu navegador no soporta videos HTML5.
         </video>
 

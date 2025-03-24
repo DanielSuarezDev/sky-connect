@@ -1,4 +1,3 @@
-// import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { RainbowButton } from "@/components/ui/rainbow-button"
 import { SparklesText } from "@/components/ui/sparkles-text"
@@ -16,7 +15,6 @@ export const HomeScreenContainer = ({
 }) => {
     return (
         <main className="min-h-screen relative flex flex-col items-center justify-center p-4 overflow-hidden">
-
                 <SparklesText text="SkyConnect Explorer" className="w-full" />
             <div className="relative z-10 w-full max-w-2xl text-center ">
 

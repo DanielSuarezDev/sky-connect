@@ -18,7 +18,6 @@ export const CardUbication = ({ airport }: { airport: Airport }) => {
         height: '100%'
     };
 
-    // Coordenadas iniciales del mapa (puedes cambiarlas según tu necesidad)
     const center = {
         lat: parseFloat(airport.latitude),
         lng: parseFloat(airport.longitude)

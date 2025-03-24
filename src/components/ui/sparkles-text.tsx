@@ -105,9 +105,6 @@ const SparklesText: React.FC<SparklesTextProps> = ({
   }, [colors.first, colors.second]);
 
   return (
-//     <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
-//     SkyConnect Explorer
-// </h1>
 
     <div
       className={cn("text-6xl font-bold ", className)}

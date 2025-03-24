@@ -26,7 +26,6 @@ export interface AviationStackResponse {
 }
 
 export interface AirportStore {
-  // Estado
   airports: Airport[];
   filteredAirports: Airport[];
   selectedAirport: Airport | null;
@@ -37,7 +36,6 @@ export interface AirportStore {
   totalPages: number;
   totalItems: number;
 
-  // Acciones básicas
   setAirports: (airports: Airport[]) => void;
   setSelectedAirport: (airport: Airport | null) => void;
   setLoading: (loading: boolean) => void;
@@ -45,11 +43,9 @@ export interface AirportStore {
   setSearchTerm: (term: string) => void;
   setCurrentPage: (page: number) => void;
 
-  // Acciones complejas
   fetchAirports: (page: number, query?: string) => Promise<void>;
   getAirportByCode: (code: string) => Airport | null;
 
-  // Selectores computados
   getCurrentPageAirports: () => Airport[];
   getTotalPages: () => number;
 } 
