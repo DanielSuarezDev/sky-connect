@@ -26,7 +26,7 @@ export const HomeScreenContainer = ({
                                 placeholder="Buscar aeropuertos..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="pl-4 py-6 bg-white text-[#006FEE] rounded-full border-0 w-[80%] mx-auto"
+                                className="pl-4 py-6 !bg-white !text-[#006FEE] rounded-full border-0 w-full md:w-[80%] mx-auto"
                             />
                         </div>
 

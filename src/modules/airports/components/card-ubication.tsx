@@ -91,7 +91,7 @@ export const CardUbication = ({ airport }: { airport: Airport }) => {
                             clickable
                             icon={{
                                 url: "/airplane-map.png",
-                                scaledSize: new google.maps.Size(160, 70),
+                                scaledSize: new google.maps.Size(180, 120),
                                 anchor: new google.maps.Point(20, 50),
                                 labelOrigin: new google.maps.Point(130, 50),
                             }}

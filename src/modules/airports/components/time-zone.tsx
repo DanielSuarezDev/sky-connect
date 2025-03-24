@@ -14,7 +14,7 @@ export const TimeZone = ({ airport }: { airport: Airport }) => {
                     backgroundImage: 'linear-gradient(to bottom, #3F495F, #0E1934)',
                 }}
                 className="relative overflow-hidden text-left rounded-lg border-1 border-white">
-                <div className="flex">
+                <div className="flex h-[235px]">
                     <div className="w-full lg:w-1/2 space-y-4 z-10 p-6">
                         <div className="flex items-center gap-3">
                             <div className="w-10 h-10 rounded-full flex items-center justify-center">
@@ -53,7 +53,7 @@ export const TimeZone = ({ airport }: { airport: Airport }) => {
                     backgroundImage: 'linear-gradient(to bottom, #3F495F, #0E1934)',
                 }}
                 className="relative overflow-hidden text-left rounded-lg border-1 border-white">
-                <div className="flex">
+                <div className="flex h-[235px]">
                     <div className="w-full lg:w-1/2 space-y-4 z-10 p-6">
                         <div className="flex items-center gap-3">
                             <div className="w-10 h-10 rounded-full flex items-center justify-center">

@@ -11,7 +11,7 @@ export async function GET(request: NextRequest) {
     const query = searchParams.get('q') || '';
     const page = parseInt(searchParams.get('page') || '1');
     const limit = parseInt(searchParams.get('limit') || '100');
-    const itemsPerPage = parseInt(searchParams.get('per_page') || '10');
+    const itemsPerPage = parseInt(searchParams.get('per_page') || '6');
 
     if (!query) {
       const response = await fetch(

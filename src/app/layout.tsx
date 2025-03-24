@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { WrapperBackground } from "@/components/ui/WrapperBackground";
+import { WrapperBackground } from "@/components/ui/wrapper-background";
 import { ThemeProvider } from "@/lib/theme-provider";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 

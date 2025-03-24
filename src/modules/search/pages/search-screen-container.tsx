@@ -47,7 +47,7 @@ export const SearchScreenContainer = ({
   }
 
   return (
-    <main className="min-h-screen p-4">
+    <main className="p-4 overflow-auto">
       <div className="max-w-6xl mx-auto space-y-8">
         <HeaderSearch />
 

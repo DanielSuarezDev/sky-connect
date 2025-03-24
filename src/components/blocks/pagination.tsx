@@ -10,7 +10,7 @@ export const Pagination = ({ totalPages, currentPage, handlePageChange }: { tota
                     variant="outline"
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
-                    className="bg-[#0060FF] hover:bg-[#0060FF] text-white border-white/20 cursor-pointer"
+                    className="!bg-[#0060FF] hover:bg-[#0060FF] text-white border-white/20 cursor-pointer"
                 >
                     Anterior
                 </Button>
@@ -35,7 +35,7 @@ export const Pagination = ({ totalPages, currentPage, handlePageChange }: { tota
                     variant="outline"
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
-                    className="bg-[#0060FF] hover:bg-[#0060FF] text-white border-white/20 cursor-pointer"
+                    className="!bg-[#0060FF] hover:bg-[#0060FF] text-white border-white/20 cursor-pointer"
                 >
                     Siguiente
                 </Button>

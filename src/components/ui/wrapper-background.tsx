@@ -21,13 +21,14 @@ export const WrapperBackground = ({ children }: { children: React.ReactNode }) =
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover z-0"
+            // className="absolute inset-0 w-full h-full object-cover z-0"
+            className="fixed inset-0 w-full h-full object-cover z-0"
         >
             <source src="/video-background.mp4" type="video/mp4" />
             Tu navegador no soporta videos HTML5.
         </video>
 
-        <div className={`absolute inset-0 ${isDark ? 'bg-[#0a1629]/90' : 'bg-white/70'} z-0 transition-colors duration-300`} />
+        <div className={`fixed inset-0 ${isDark ? 'bg-[#0a1629]/80' : 'bg-white/70'} z-0 transition-colors duration-300`} />
 
         <div className={`relative z-10 w-full text-center ${isDark ? 'text-white' : 'text-[#0a1629]'} transition-colors duration-300`}>
             {children}
