@@ -1,7 +1,5 @@
-// Importar Jest DOM Matchers
 import '@testing-library/jest-dom';
 
-// Suprimir advertencias de la consola relacionadas con el uso de ReactDOMTestUtils.act
 const originalError = console.error;
 console.error = (...args) => {
   if (

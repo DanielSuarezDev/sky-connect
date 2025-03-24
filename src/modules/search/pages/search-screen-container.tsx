@@ -52,7 +52,7 @@ export const SearchScreenContainer = ({
         <HeaderSearch />
 
         <div className="text-center mb-4">
-          <p className="text-blue-100">
+          <p className="text-blue-500 dark:text-blue-500">
             Se encontraron {totalItems} aeropuertos{searchTerm ? ` que coinciden con "${searchTerm}"` : ''}
           </p>
         </div>

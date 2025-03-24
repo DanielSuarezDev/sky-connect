@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { WrapperBackground } from "@/components/ui/WrapperBackground";
+import { ThemeProvider } from "@/lib/theme-provider";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,11 +22,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${gothamBlack.variable}`}>
-        <WrapperBackground>
-          {children}
-        </WrapperBackground>
+        <ThemeProvider defaultTheme="system" storageKey="sky-connect-theme">
+          <WrapperBackground>
+            <div className="absolute top-4 right-4 z-20">
+              <ThemeToggle />
+            </div>
+            {children}
+          </WrapperBackground>
+        </ThemeProvider>
       </body>
     </html>
   );

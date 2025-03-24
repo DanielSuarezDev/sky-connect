@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 
-// Versión simplificada del componente HeaderSearch para pruebas
 export const HeaderSearch = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = () => {
-    // Mock implementation
   };
 
   const resetSearch = () => {

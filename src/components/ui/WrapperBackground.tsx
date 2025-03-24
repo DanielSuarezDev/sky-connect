@@ -1,8 +1,12 @@
 "use client"
 import React, { useEffect, useRef } from "react";
+import { useTheme } from "@/lib/theme-provider";
 
 export const WrapperBackground = ({ children }: { children: React.ReactNode }) => {
     const videoRef = useRef<HTMLVideoElement>(null)
+    const { theme } = useTheme()
+    const isDark = theme === "dark"
+
     useEffect(() => {
         if (videoRef.current) {
             videoRef.current.play().catch(error => {
@@ -23,9 +27,9 @@ export const WrapperBackground = ({ children }: { children: React.ReactNode }) =
             Tu navegador no soporta videos HTML5.
         </video>
 
-        <div className="absolute inset-0 bg-[#0a1629]/90 z-0" />
+        <div className={`absolute inset-0 ${isDark ? 'bg-[#0a1629]/90' : 'bg-white/70'} z-0 transition-colors duration-300`} />
 
-        <div className="relative z-10 w-full text-center">
+        <div className={`relative z-10 w-full text-center ${isDark ? 'text-white' : 'text-[#0a1629]'} transition-colors duration-300`}>
             {children}
         </div>
     </div>;

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { create } from 'zustand';
 import { aviationService } from '@/modules/aviation-stack/services/aviation.service';
-import { Airport } from '@/modules/aviation-stack/types/aviation.types'; // Ajusta según tu interfaz
+import { Airport } from '@/modules/aviation-stack/types/aviation.types';
 
 interface AirportStore {
   airports: Airport[];
