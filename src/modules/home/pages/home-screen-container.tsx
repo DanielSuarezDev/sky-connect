@@ -1,5 +1,7 @@
-import { Button } from "@/components/ui/button"
+// import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { RainbowButton } from "@/components/ui/rainbow-button"
+import { SparklesText } from "@/components/ui/sparkles-text"
 import { Search } from "lucide-react"
 import React from "react"
 
@@ -13,12 +15,10 @@ export const HomeScreenContainer = ({
     handleSearch: (e: React.FormEvent) => void
 }) => {
     return (
-        <main className="min-h-screen relative flex items-center justify-center p-4 overflow-hidden">
+        <main className="min-h-screen relative flex flex-col items-center justify-center p-4 overflow-hidden">
 
-            <div className="relative z-10 w-full max-w-lg text-center">
-                <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
-                    SkyConnect Explorer
-                </h1>
+                <SparklesText text="SkyConnect Explorer" className="w-full" />
+            <div className="relative z-10 w-full max-w-2xl text-center ">
 
                 <div className="mt-12">
                     <form onSubmit={handleSearch} className="space-y-4">
@@ -28,16 +28,13 @@ export const HomeScreenContainer = ({
                                 placeholder="Buscar aeropuertos..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="pl-4 py-6 bg-white text-[#0a1629] rounded-full border-0 w-full"
+                                className="pl-4 py-6 bg-white text-[#006FEE] rounded-full border-0 w-[80%] mx-auto"
                             />
                         </div>
 
-                        <Button
-                            type="submit"
-                            className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white py-2 px-8 rounded-full"
-                        >
+                        <RainbowButton>
                             <Search className="mr-2 h-4 w-4" /> Buscar
-                        </Button>
+                        </RainbowButton>
                     </form>
                 </div>
             </div>

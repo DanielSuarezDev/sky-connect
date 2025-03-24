@@ -7,9 +7,9 @@ export const GoBack = () => {
         <div className="mt-6 text-center">
             <button
                 onClick={() => router.back()}
-                className="text-[#006fee] hover:text-[#3f8fff] inline-flex items-center"
+                className="text-[#006fee] hover:text-[#3f8fff] inline-flex items-center bg-white rounded-full px-4 py-2 cursor-pointer"
             >
-                ← Volver a resultados
+                ← Volver
             </button>
         </div>
     );

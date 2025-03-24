@@ -46,7 +46,9 @@ export const AirportContainer = ({
 
     return (
         <main className="min-h-screen p-4">
+            <div className="absolute top-1 left-10">
             <GoBack />
+            </div>
             <div className="max-w-5xl mx-auto">
                 <div className="mb-8 text-center">
                     <h1 className="text-5xl font-bold text-[#006fee]">{airport.airport_name}</h1>

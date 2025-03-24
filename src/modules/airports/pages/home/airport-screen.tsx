@@ -23,6 +23,7 @@ export const AirportScreen = () => {
     if (!airport) {
       router.back()
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [airport])
 
   return (

@@ -44,6 +44,12 @@
 }
 
 :root {
+  --color-1: 0 100% 63%;
+  --color-2: 270 100% 63%;
+  --color-3: 210 100% 63%;
+  --color-4: 195 100% 63%;
+  --color-5: 90 100% 63%;
+
   --radius: 0.625rem;
   --background: 222.2 84% 4.9%;
   --foreground: 210 40% 98%;
@@ -133,6 +139,22 @@
 body {
   /* background-color: #0a1525; */
   color: white;
+}
+
+@layer utilities {
+  @keyframes rainbow {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 200%;
+    }
+  }
+
+  .animate-rainbow {
+    animation: rainbow var(--speed, 2s) linear infinite;
+    background-size: 200%;
+  }
 }
 
 

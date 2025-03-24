@@ -1,10 +1,12 @@
 import { Search } from 'lucide-react';
 import React from 'react';
+import { SparklesText } from '../ui/sparkles-text';
 
 export const HeaderSearch = () => {
     return (
         <header className="mb-8 flex flex-col items-center justify-between gap-4 md:flex-row">
-          <h1 className="text-3xl font-bold text-[#006fee] md:text-4xl">SkyConnect Explorer</h1>
+          <SparklesText text="SkyConnect Explorer" className="text-4xl" />
+
           <div className="flex w-full max-w-xl items-center gap-2">
             <div className="relative flex-1">
               <input
